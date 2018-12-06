@@ -1,6 +1,6 @@
 
 require_relative '../../config/environment'
-
+require 'pry'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -32,9 +32,17 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
   
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :show
+  end
+  
   delete '/posts/:id/delete' do
     @post = Post.find(params[:id])
-    Post.delete(params[:id].to_i)
-    erb :delete
+    Post.delete(params[:id])
+    erb :show
   end
 end
