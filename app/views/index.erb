@@ -1,1 +1,5 @@
-<h1><%=Post.last%></h1>
+<h1>All Posts</h1>
+<% @posts.each do |post| %>
+    <p>Name: <%= post.name %></p><br>
+    <p>Content: <%= post.content %></p><br>
+<% end %>
