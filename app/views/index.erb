@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="UTF-8">
+    <title> Look at all the articles! </title>
+  </head>
+  <body>
+    <h1> Here is a look at all our Articles</h1>
+    <% @articles.each do |article| %>
+    <p><%= article.title %></p> </br> 
+    <p><%= article.content %></p></br> 
+  </body>
+</html>
