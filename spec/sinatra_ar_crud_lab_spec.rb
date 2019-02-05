@@ -24,17 +24,17 @@ describe "Magazine App" do
       expect(Article.last.title).to eq("my favorite article")
     end
 
-  #  it "redirects to '/articles/:id'" do
-  #    visit '/articles/new'
+    it "redirects to '/articles/:id'" do
+      visit '/articles/new'
 
-  #    fill_in :title, :with => "an article"
-  #    fill_in :content, :with => "content content content content content"
+      fill_in :title, :with => "an article"
+      fill_in :content, :with => "content content content content content"
 
-  #    page.find(:css, "[type=submit]").click
+      page.find(:css, "[type=submit]").click
 
-  #    expect(page.current_path).to eq("/articles/#{Article.last.id}")
-  #    expect(page.body).to include("content content content content content")
-  #  end
+      expect(page.current_path).to eq("/articles/#{Article.last.id}")
+      expect(page.body).to include("content content content content content")
+    end
 
   end
 
@@ -88,15 +88,15 @@ describe "Magazine App" do
 
     end
 
-    #it "saves edits to an article" do
-    #  visit "/articles/#{@article2.id}/edit"
-    #  fill_in :title, :with => "Second Article!!"
-    #  fill_in :content, :with => "this is the best article ever written"
+    it "saves edits to an article" do
+      visit "/articles/#{@article2.id}/edit"
+      fill_in :title, :with => "Second Article!!"
+      fill_in :content, :with => "this is the best article ever written"
 
-    #  page.find(:css, "[type=submit]").click
-    #  expect(Article.all.count).to eq(2)
-    #  expect(Article.last.title).to eq("Second Article!!")
-    #end
+      page.find(:css, "[type=submit]").click
+      expect(Article.all.count).to eq(2)
+      expect(Article.last.title).to eq("Second Article!!")
+    end
 
     it "redirects to '/articles/:id'" do
       visit "/articles/#{@article2.id}/edit"
@@ -121,12 +121,12 @@ describe "Magazine App" do
       expect(last_response.status).to eq(200)
     end
 
-  #  it "deletes an article from the database" do
-  #    visit "/articles/#{@article2.id}"
-  #    page.find(:css, "form [type=submit]").click
-  #    expect(Article.all.count).to eq(1)
-  #    expect(Article.last.title).to eq("Hello World")
-  #  end
+    it "deletes an article from the database" do
+      visit "/articles/#{@article2.id}"
+      page.find(:css, "form [type=submit]").click
+      expect(Article.all.count).to eq(1)
+      expect(Article.last.title).to eq("Hello World")
+    end
 
     it "submits the form via a delete request" do
       visit "/articles/#{@article2.id}"

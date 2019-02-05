@@ -1,6 +1,22 @@
-<h2>Your New Article: </h2>
+<!-- <h2>Your New Article: </h2>
 <form action="/articles" method="POST">
   <p>Title: <input type="text" name="title"></p>
   <p>Content: <input type="text" name="content"></p>
   <input type="submit" value="Submit">
+</form> -->
+
+
+<form action="/articles" method="post">
+  <ul>
+    <li>
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" />
+    </li>
+    <li>
+      <label for="content">Content</label>
+      <textarea id="content" type="text" name="content">
+      </textarea>
+    </li>
+  </ul>
+  <input type="submit" />
 </form>
