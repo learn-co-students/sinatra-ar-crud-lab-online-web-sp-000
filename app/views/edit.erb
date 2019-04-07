@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit your article</title>
+  </head>
+
+  <body>
+    <form method="POST" action=patch "/articles/:id">
+      <h1>Edit your article</h1>
+      <p><label>Title:</label>
+      <input type="hidden" id="hidden" name="_method" value="patch" /></p>
+      <br>
+      <p><label>Content:</label>
+      <input type="hidden" id="hidden" name="_method" value="patch" /></p>
+
+      <input type="submit" id ="submit" value="Submit">
+
+    </form>
+  </body>
+</html>
