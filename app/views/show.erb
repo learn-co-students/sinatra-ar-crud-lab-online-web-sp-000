@@ -9,5 +9,12 @@
       <h3><%= @article.title %></h3>
       <h3><%= @article.content %></h3>
 
+      <form method="POST" action="/articles/<%= @article.id %>">
+        <input type="hidden" id="hidden" name="_method" value="DELETE" /></p>
+
+        <input type="submit" id ="submit" value="Delete">
+
+      </form>
+
   </body>
 </html>
