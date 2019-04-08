@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
   post '/articles' do
     @article = Article.create(params)
 
-    redirect to '/articles/#{ @article.id}'
+    redirect to "/articles/#{ @article.id}"
   end
 
   #show
@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
     @article = Article.find(params[:id])
     @article.update(params[:article])
 
-    redirect to '/articles/#{ @article.id}'
+    redirect to "/articles/#{ @article.id}"
   end
 
   #destroy
