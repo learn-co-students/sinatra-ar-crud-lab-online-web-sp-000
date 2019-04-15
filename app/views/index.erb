@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Articles</title>
+  </head>
+  <body>
+    <h1>All The Articles</h1>
+    <% @articles.each.with_index do |article, i| %>
+      <h2><%= i + 1 %>. <%= article.title %> </h2>
+      <p><%= article.content %></p>
+      <form action="/articles/<%= article.id %>/delete" method="post">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete" id="submit">
+      </form>
+      <br>
+    <% end %>
+  </body>
+</html>
