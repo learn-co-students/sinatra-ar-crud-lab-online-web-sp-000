@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Articles</title>
+</head>
+<body>
+  <h1>Current Articles:</h1>
+  <% @articles.each do |article| %>
+  <h2><a href="/articles/<%= article[:id] %>"><%= article[:title] %></a></h2>
+  <p><%= article[:content] %></p>
+  <% end %>
+</body>
+</html>
