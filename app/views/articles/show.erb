@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 <h1><%= @article.title %></h1>
 <p>
   <%= @article.content %>
 </p>
-=======
-one article
->>>>>>> 39c6ba37931c480cf303d720367588731fff18ba
+
+<form action="/articles/<%= @article.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="delete" value="Delete Article">
+</form>
