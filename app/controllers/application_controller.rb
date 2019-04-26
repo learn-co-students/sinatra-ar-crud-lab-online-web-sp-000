@@ -11,6 +11,10 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
 
+  get '/articles' do
+    erb :'articles/index'
+  end
+
   get '/articles/new' do
     erb :'articles/new'
   end
@@ -25,4 +29,6 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{Article.last.id}"
   end
 
+  get '/articles/:id/edit' do
+    erb :'articles/edit'
 end
