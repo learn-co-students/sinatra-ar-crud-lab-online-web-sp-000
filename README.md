@@ -20,25 +20,20 @@ your `/articles/new` route _before_ your `/articles/:id` route.
 
 ### Database
 
-First, you'll need to create the `articles` table. An article should have a title
-and content.
+#First, you'll need to create the `articles` table. An article should have a title and content.
 
-Next, set up the corresponding `Article` model. Make sure the class inherits from `ActiveRecord::Base`.
+#Next, set up the corresponding `Article` model. Make sure the class inherits from `ActiveRecord::Base`.
 
 ### Create
 
-Now that we have the database and model set up, it's time to set up the ability
-to create an article.
+Now that we have the database and model set up, it's time to set up the ability to create an article.
 
-First, create a route in your controller, `get '/articles/new'`, that renders the
-`new.erb` view.
+#First, create a route in your controller, `get '/articles/new'`, that renders the `new.erb` view.
 
-We need to create an ERB file in the views directory, `new.erb`, with a form
-that `POST`s to a controller action, `/articles`. The controller action should use
-the Create CRUD action to create the article and save it to the database.
-When the form on `new.erb` is submitted, the action, pointing to `/articles`,
-will trigger a render of an `index.erb` file automatically. Before we can
-fully test if our form is working, we need to create that `index.erb` file, as
+Then create an ERB file in the views directory, `new.erb`, with a form that `POST`s to a controller action, `/articles`. The controller action should use the Create CRUD action to create the article and save it to the database.
+
+When the form on `new.erb` is submitted, the action, pointing to
+`/articles`, will trigger a render of an `index.erb` file automatically. Before we can fully test if our form is working, we need to create that `index.erb` file, as
 our site will currently crash upon submission.
 
 ### Read
