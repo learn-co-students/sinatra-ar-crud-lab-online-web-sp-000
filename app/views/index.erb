@@ -1,0 +1,4 @@
+<h1> Articles </h1>
+<h2> <% @articles.collect do |x| %>
+  <%= "#{x.title}" + "-" + "#{x.content}" %><br>
+<% end %> </h2>
