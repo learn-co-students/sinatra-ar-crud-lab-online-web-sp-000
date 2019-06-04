@@ -38,11 +38,21 @@ end
   end
 
   get '/articles/:id/edit' do
-
+    @article = Article.find(params[:id])
     erb :edit
   end
 
   patch '/articles/:id' do
-    binding.pry
+    @article = Article.find(params[:id])
+    @article.update(title: params[:title])
+    @article.update(content: params[:content])
+
+    redirect to "/articles/#{ @article.id }"
+
+  end
+
+  delete '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.destroy
   end
 end
