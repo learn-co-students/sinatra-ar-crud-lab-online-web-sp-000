@@ -41,4 +41,8 @@ end
 
     erb :edit
   end
+
+  patch '/articles/:id' do
+    binding.pry
+  end
 end
