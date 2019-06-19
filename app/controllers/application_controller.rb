@@ -4,8 +4,10 @@ require_relative '../../config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
+
     set :public_folder, 'public'
     set :views, 'app/views'
+
   end
 
   get '/articles/new' do
@@ -19,4 +21,6 @@ class ApplicationController < Sinatra::Base
     Article.create(title: params[:article][:title], content: params[:article][:content])
 
   end
+
+
 end
