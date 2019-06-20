@@ -1,0 +1,17 @@
+
+<p> <%= @article_object.title %> </p>
+<p> <%= @article_object.content %> </p>
+
+<form action="/articles/<%= @article_object.id%>" method="post">
+
+   <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+   <label for="article[:title]">Article Title</label>
+   <input type="text" id="title" name="article[title]">
+
+   <label for="article[:content]">Article Content</label>
+   <input type="text" id="content" name="article[content]">
+
+   <input type="submit" id="submit">
+
+</form>
