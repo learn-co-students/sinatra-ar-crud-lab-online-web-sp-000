@@ -23,11 +23,11 @@ describe "Magazine App" do
       expect(Article.last.title).to eq("my favorite article")
     end
 
-    it "redirects to '/articles/:id'" do
-      visit '/articles/new'
+     it "redirects to '/articles/:id'" do
+       visit '/articles/new'
 
-      fill_in :title, :with => "an article"
-      fill_in :content, :with => "content content content content content"
+       fill_in :title, :with => "an article"
+       fill_in :content, :with => "content content content content content"
 
       page.find(:css, "[type=submit]").click
 
@@ -66,7 +66,7 @@ describe "Magazine App" do
         get "/articles/#{@article1.id}"
         expect(last_response.body).to include(article_content)
       end
-    end
+     end
 
 
   end
@@ -101,17 +101,17 @@ describe "Magazine App" do
       visit "/articles/#{@article2.id}/edit"
       fill_in :content, :with => "this is even better than the last"
 
-      page.find(:css, "[type=submit]").click
+ 
+    it "submits the form via a patch request" do
+      visit     page.find(:css, "[type=submit]").click
       expect(page.current_path).to eq("/articles/#{@article2.id}")
       expect(page.body).to include("this is even better than the last")
     end
-
-    it "submits the form via a patch request" do
-      visit "/articles/#{@article2.id}/edit"
+ "/articles/#{@article2.id}/edit"
       expect(find("[name=_method]", :visible => false).value).to match(/patch/i)
     end
 
-  end
+   end
 
   describe "delete action" do
 
