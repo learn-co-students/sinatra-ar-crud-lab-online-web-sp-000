@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ActiveRecord Lab</title>
+  </head>
+    <form action="/articles/<%= @article.id %>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label for="title">Title:</label>
+      <input id="title" name="title" type="text" value="<%= @article.title %>"><br><br>
+      <label for="content">Content:</label>
+      <input id="content" name="content" type="text" value="<%= @article.content %>"><br><br>
+      <input type="submit" id="submit">
+    </form>
+  <body>
+    
+  </body>
+</html>
