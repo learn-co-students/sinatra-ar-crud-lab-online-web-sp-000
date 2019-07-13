@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Article</title>
+  </head>
+<body>
+<form action="/articles/<%= Article.last.id + 1 %>" method="post">
+  Title: <input type="text" name="title"/>
+  Content: <input type="text" name="content"/>
+  <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
