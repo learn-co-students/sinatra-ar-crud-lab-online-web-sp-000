@@ -1,20 +1,24 @@
-source 'http://rubygems.org'
+# A sample Gemfile
+source "https://rubygems.org"
 
+gem "rails"
+
+gem 'sinatra', require: 'sinatra/base'
+gem 'sinatra-reloader', require: false 
 gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
-
-gem 'sinatra'
-gem 'pry-nav'
 gem 'rake'
-gem 'rspec'
-gem 'rack-test'
-gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 gem 'require_all'
+gem 'sqlite3', '~>1.3.6'
+gem 'thin'
+# gem 'shotgun'
+gem 'pry'
 
 
-group :development do
-  gem "capybara"
-  gem "pry"
-  gem 'sqlite3', '~> 1.3.6'
-  gem "shotgun"
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'rack-test'
+  gem 'database_cleaner'
+  gem 'shotgun'
 end
