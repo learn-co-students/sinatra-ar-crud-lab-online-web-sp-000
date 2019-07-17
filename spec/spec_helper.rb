@@ -17,7 +17,7 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.include Rack::Test::Methods
   config.include Capybara::DSL
-
+  
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
@@ -28,7 +28,7 @@ RSpec.configure do |config|
       example.run
     end
   end
-
+  
   config.order = 'default'
 end
 

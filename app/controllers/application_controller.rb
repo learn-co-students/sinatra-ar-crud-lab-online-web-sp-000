@@ -1,4 +1,4 @@
-
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -8,18 +8,14 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
-
-  end
-
   get '/articles/new' do
     erb :new
   end
 
   post '/articles' do
-    Article.create(params)
+    @article = Article.create(params)
 
-  redirect '/articles'
+  redirect "/articles/#{@article.id}"
   end
   
   get '/articles' do
