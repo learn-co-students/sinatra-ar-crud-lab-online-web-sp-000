@@ -9,5 +9,20 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+  erb :index
   end
+
+  get 'articles/:id' do
+  end
+
+  get '/articles/new' do
+    binding.pry
+  erb :new
+  end
+
+  post '/articles/' do
+  binding.pry
+  end
+
+
 end
