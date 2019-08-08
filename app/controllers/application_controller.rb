@@ -22,8 +22,14 @@ class ApplicationController < Sinatra::Base
     binding.pry
   end
 
-  post '/articles/' do
-  binding.pry
+  post '/articles' do
+   @article = Article.create(title: params[:title],content: params[:content])
+    erb :show
+  end
+
+  get '/articles' do
+    @articles = Article.all
+    erb :index
   end
 
 
