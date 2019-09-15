@@ -1,0 +1,10 @@
+<h1>Articles</h1>
+
+<h4><div><a href="./articles/new">Create New</a></div></h4>
+
+<% @articles.each do |a| %>
+  <div class="articles">
+    <p>Title: <%= a.title %></p><br>
+    <p>Content: <%= a.content %></p><br>
+<% end %>
+  </div><br>
