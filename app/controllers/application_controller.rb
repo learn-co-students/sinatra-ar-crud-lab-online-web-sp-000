@@ -1,4 +1,5 @@
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -40,6 +41,7 @@ class ApplicationController < Sinatra::Base
     @article = Article.find(params[:id])
     @article.update(params[:article])
     # @article.update
+    binding.pry
     redirect to "/articles/#{ @article.id }"
   end
 
