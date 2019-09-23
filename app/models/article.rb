@@ -1,4 +1,5 @@
-#Placeholder for a model
+require 'pry'
 
+#Placeholder for a model
 class Article < ActiveRecord::Base
 end
