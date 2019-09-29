@@ -13,15 +13,14 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/articles' do 
-    @article = Article.create(title: params[:title], content: params[:content])
+    @article = Article.create(params)
     @article.save
     
     redirect "/articles/#{@article.id}"
   end
   
   get '/articles/:id' do
-    @article_id = params[:id]
-    @article = Article.find(@article_id)
+    @article = Article.find(params[:id])
     
     erb :show
   end
@@ -33,8 +32,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/articles/:id/edit' do 
-    @article_id = params[:id]
-    @article = Article.find(@article_id)
+    @article = Article.find(params[:id])
     erb :edit
   end
   
@@ -42,14 +40,14 @@ class ApplicationController < Sinatra::Base
     @article = Article.find(params[:id])
     @article.title = params[:title]
     @article.content = params[:content]
+    #@article.update(params[:article])
     @article.save
     
     redirect "/articles/#{@article.id}"
   end
   
   delete '/articles/:id' do
-    @article_id = params[:id]
-    @article = Article.find(@article_id)
+    @article = Article.find(params[:id])
     @article.delete
     
     redirect '/articles'
