@@ -1,0 +1,10 @@
+<h1>Here is the index</h1>
+<h2> <a href="/articles/new">Create an article</a> </h2>
+<ol> Here are the List of all Articles
+  <% @articles.each do |article| %>
+  <li>
+    <a href=<%="/articles/#{article.id}"%>> <%=article.title%> </a>
+    <%end%>
+  </li>
+</ol>
+
