@@ -44,8 +44,15 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/articles/:id" do
-    
+    #binding.pry
+    @article = Article.find(params[:id])
+    @article.update(params["article"])
     erb :show
+  end
+
+  delete '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.delete
   end
 
 end
