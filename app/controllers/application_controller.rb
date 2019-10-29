@@ -30,8 +30,8 @@ class ApplicationController < Sinatra::Base
 
 
   get '/articles/:id' do
-    @article = Article.fetch_value(:id)
-    #@id = @article.primary_key
+    @article = Article.find(params[:id])
+
     erb :show
   end
 
