@@ -1,0 +1,8 @@
+<%=@article.title%>
+<%=@article.content%>
+<form action="/articles/<%=@article.id%>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <p>Enter new title: <input type="text" name="title"></p>
+    <p>Enter new content: <input type="text" name="content"></p>
+    <input type="submit">
+</form>
