@@ -1,5 +1,5 @@
-
 require './config/environment'
+require './app/controllers/application_controller'
 
 begin
   fi_check_migration
