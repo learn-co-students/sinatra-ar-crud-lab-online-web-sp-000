@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+
+  <title>Article Database</title>
+  <meta name="description" content="Article Database">
+</head>
+
+<body>
+  <% @articles.each do |item|%>
+  <h1><%= item[:title] %></h1>
+  <h2><%= item[:content]%></h2>
+  <%end%>
+</body>
+</html>
