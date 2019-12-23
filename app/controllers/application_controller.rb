@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
 
   #delete
   delete "/articles/:id" do
-    Article.destroy(params[:id])
+    @article = Article.destroy(params[:id])
     redirect to "/articles"
     #add form that submits a delete request
   end
