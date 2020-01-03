@@ -1,12 +1,14 @@
 
 
-<form method="patch" action="/articles/:id">
+<form method="post" action="/articles/#{@article[:id]}">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
   <p>Title: <input type="text" name="title"></p>
   <p>Content: <input type="text" name="content"></p>
   <br><br>
+  <% %>
   <input type="submit" id="submit">
+
 </form>
 
 <p> <%= @article[:title] %></p>
