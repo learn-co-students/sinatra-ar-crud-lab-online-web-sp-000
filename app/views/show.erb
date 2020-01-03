@@ -4,5 +4,5 @@ Show me!
 <p><%= @article.content %> </p>
 <form action="/articles/<%=@article.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" id="delete">
+  <input type="submit" id="delete" value="delete">
 </form>
