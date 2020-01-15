@@ -3,10 +3,6 @@ ENV['SINATRA_ENV'] ||= "development"
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
-configure :development do 
-  set :database, 'sqlite3:db/articles.db'
-end
-
 def fi_check_migration
   begin
     ActiveRecord::Migration.check_pending!
