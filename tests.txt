@@ -1,0 +1,363 @@
+D, [2020-02-10T02:58:44.222733 #6930] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Run options: include {:focus=>true}
+
+All examples were filtered out; ignoring {:focus=>true}
+
+Magazine App
+  Create Action
+    creates a new article (FAILED - 1)
+    redirects to '/articles/:id' (FAILED - 2)
+  Read Action
+    index action
+      responds with a 200 status code (FAILED - 3)
+      displays all the articles (FAILED - 4)
+    show action
+      show page responds with a 200 status code (FAILED - 5)
+      show page displays the article's title
+      show page displays the article's content (FAILED - 6)
+  update action
+    responds with a 200 status code (FAILED - 7)
+    displays the existing object in the edit form (FAILED - 8)
+    saves edits to an article (FAILED - 9)
+    redirects to '/articles/:id' (FAILED - 10)
+    submits the form via a patch request (FAILED - 11)
+  delete action
+    responds with a 200 status code (FAILED - 12)
+    deletes an article from the database (FAILED - 13)
+    submits the form via a delete request (FAILED - 14)
+
+Failures:
+
+  1) Magazine App Create Action creates a new article
+     Failure/Error: fill_in :title, :with => "my favorite article"
+
+     Capybara::ElementNotFound:
+       Unable to find visible field :title that is not disabled
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/actions.rb:92:in `fill_in'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+     # ./spec/sinatra_ar_crud_lab_spec.rb:17:in `block (3 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  2) Magazine App Create Action redirects to '/articles/:id'
+     Failure/Error: fill_in :title, :with => "an article"
+
+     Capybara::ElementNotFound:
+       Unable to find visible field :title that is not disabled
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/actions.rb:92:in `fill_in'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+     # ./spec/sinatra_ar_crud_lab_spec.rb:29:in `block (3 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  3) Magazine App Read Action  index action responds with a 200 status code
+     Failure/Error: expect(last_response.status).to eq(200)
+
+       expected: 200
+            got: 404
+
+       (compared using ==)
+     # ./spec/sinatra_ar_crud_lab_spec.rb:44:in `block (4 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  4) Magazine App Read Action  index action displays all the articles
+     Failure/Error: expect(last_response.body).to include(@article2.title)
+
+       expected "<!DOCTYPE html>\n<html>\n<head>\n  <style type=\"text/css\">\n  body { text-align:center;font-family...2F;articles&#x27; do\n    &quot;Hello World&quot;\n  end\nend\n</pre>\n  </div>\n</body>\n</html>\n" to include "second article"
+       Diff:
+       @@ -1,2 +1,25 @@
+       -second article
+       +<!DOCTYPE html>
+       +<html>
+       +<head>
+       +  <style type="text/css">
+       +  body { text-align:center;font-family:helvetica,arial;font-size:22px;
+       +    color:#888;margin:20px}
+       +  #c {margin:0 auto;width:500px;text-align:left}
+       +  </style>
+       +</head>
+       +<body>
+       +  <h2>Sinatra doesn’t know this ditty.</h2>
+       +  <img src='http://example.org/__sinatra__/404.png'>
+       +  <div id="c">
+       +    Try this:
+       +    <pre># in application_controller.rb
+       +class ApplicationController
+       +  get &#x27;&#x2F;articles&#x27; do
+       +    &quot;Hello World&quot;
+       +  end
+       +end
+       +</pre>
+       +  </div>
+       +</body>
+       +</html>
+     # ./spec/sinatra_ar_crud_lab_spec.rb:50:in `block (4 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  5) Magazine App Read Action  show action show page responds with a 200 status code
+     Failure/Error: expect(last_response.status).to eq(200)
+
+       expected: 200
+            got: 404
+
+       (compared using ==)
+     # ./spec/sinatra_ar_crud_lab_spec.rb:57:in `block (4 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  6) Magazine App Read Action  show action show page displays the article's content
+     Failure/Error: expect(last_response.body).to include(article_content)
+
+       expected "<!DOCTYPE html>\n<html>\n<head>\n  <style type=\"text/css\">\n  body { text-align:center;font-family...cles&#x2F;1&#x27; do\n    &quot;Hello World&quot;\n  end\nend\n</pre>\n  </div>\n</body>\n</html>\n" to include "This is my first article!!!"
+       Diff:
+       @@ -1,2 +1,25 @@
+       -This is my first article!!!
+       +<!DOCTYPE html>
+       +<html>
+       +<head>
+       +  <style type="text/css">
+       +  body { text-align:center;font-family:helvetica,arial;font-size:22px;
+       +    color:#888;margin:20px}
+       +  #c {margin:0 auto;width:500px;text-align:left}
+       +  </style>
+       +</head>
+       +<body>
+       +  <h2>Sinatra doesn’t know this ditty.</h2>
+       +  <img src='http://example.org/__sinatra__/404.png'>
+       +  <div id="c">
+       +    Try this:
+       +    <pre># in application_controller.rb
+       +class ApplicationController
+       +  get &#x27;&#x2F;articles&#x2F;1&#x27; do
+       +    &quot;Hello World&quot;
+       +  end
+       +end
+       +</pre>
+       +  </div>
+       +</body>
+       +</html>
+     # ./spec/sinatra_ar_crud_lab_spec.rb:67:in `block (4 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  7) Magazine App update action responds with a 200 status code
+     Failure/Error: expect(last_response.status).to eq(200)
+
+       expected: 200
+            got: 404
+
+       (compared using ==)
+     # ./spec/sinatra_ar_crud_lab_spec.rb:80:in `block (3 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  8) Magazine App update action displays the existing object in the edit form
+     Failure/Error: expect(page.body).to include("#{@article2.title}")
+
+       expected "<!DOCTYPE html>\n<html>\n<head>\n  <style type=\"text/css\">\n  body { text-align:center;font-family...2&#x2F;edit&#x27; do\n    &quot;Hello World&quot;\n  end\nend\n</pre>\n  </div>\n</body>\n</html>\n" to include "second article"
+       Diff:
+       @@ -1,2 +1,25 @@
+       -second article
+       +<!DOCTYPE html>
+       +<html>
+       +<head>
+       +  <style type="text/css">
+       +  body { text-align:center;font-family:helvetica,arial;font-size:22px;
+       +    color:#888;margin:20px}
+       +  #c {margin:0 auto;width:500px;text-align:left}
+       +  </style>
+       +</head>
+       +<body>
+       +  <h2>Sinatra doesn’t know this ditty.</h2>
+       +  <img src='http://www.example.com/__sinatra__/404.png'>
+       +  <div id="c">
+       +    Try this:
+       +    <pre># in application_controller.rb
+       +class ApplicationController
+       +  get &#x27;&#x2F;articles&#x2F;2&#x2F;edit&#x27; do
+       +    &quot;Hello World&quot;
+       +  end
+       +end
+       +</pre>
+       +  </div>
+       +</body>
+       +</html>
+     # ./spec/sinatra_ar_crud_lab_spec.rb:85:in `block (3 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  9) Magazine App update action saves edits to an article
+     Failure/Error: fill_in :title, :with => "Second Article!!"
+
+     Capybara::ElementNotFound:
+       Unable to find visible field :title that is not disabled
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/actions.rb:92:in `fill_in'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+     # ./spec/sinatra_ar_crud_lab_spec.rb:92:in `block (3 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+     # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+     # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  10) Magazine App update action redirects to '/articles/:id'
+      Failure/Error: fill_in :content, :with => "this is even better than the last"
+
+      Capybara::ElementNotFound:
+        Unable to find visible field :content that is not disabled
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/actions.rb:92:in `fill_in'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+      # ./spec/sinatra_ar_crud_lab_spec.rb:102:in `block (3 levels) in <top (required)>'
+      # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+      # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  11) Magazine App update action submits the form via a patch request
+      Failure/Error: expect(find("[name=_method]", :visible => false).value).to match(/patch/i)
+
+      Capybara::ElementNotFound:
+        Unable to find css "[name=_method]"
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+      # ./spec/sinatra_ar_crud_lab_spec.rb:111:in `block (3 levels) in <top (required)>'
+      # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+      # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  12) Magazine App delete action responds with a 200 status code
+      Failure/Error: expect(last_response.status).to eq(200)
+
+        expected: 200
+             got: 404
+
+        (compared using ==)
+      # ./spec/sinatra_ar_crud_lab_spec.rb:120:in `block (3 levels) in <top (required)>'
+      # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+      # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  13) Magazine App delete action deletes an article from the database
+      Failure/Error: page.find(:css, "form [type=submit]").click
+
+      Capybara::ElementNotFound:
+        Unable to find visible css "form [type=submit]"
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+      # ./spec/sinatra_ar_crud_lab_spec.rb:125:in `block (3 levels) in <top (required)>'
+      # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+      # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+  14) Magazine App delete action submits the form via a delete request
+      Failure/Error: expect(find("[name=_method]", :visible => false).value).to match(/delete/i)
+
+      Capybara::ElementNotFound:
+        Unable to find css "[name=_method]"
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:314:in `block in synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/base.rb:85:in `synchronize'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:302:in `synced_resolve'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/node/finders.rb:37:in `find'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/session.rb:808:in `block (2 levels) in <class:Session>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/capybara-2.18.0/lib/capybara/dsl.rb:50:in `block (2 levels) in <module:DSL>'
+      # ./spec/sinatra_ar_crud_lab_spec.rb:132:in `block (3 levels) in <top (required)>'
+      # ./spec/spec_helper.rb:28:in `block (3 levels) in <top (required)>'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/generic/base.rb:16:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/base.rb:98:in `cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:86:in `block (2 levels) in cleaning'
+      # /usr/local/rvm/gems/ruby-2.6.1/gems/database_cleaner-1.6.2/lib/database_cleaner/configuration.rb:87:in `cleaning'
+      # ./spec/spec_helper.rb:27:in `block (2 levels) in <top (required)>'
+
+Finished in 0.16185 seconds (files took 1.07 seconds to load)
+15 examples, 14 failures
+
+Failed examples:
+
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:14 # Magazine App Create Action creates a new article
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:26 # Magazine App Create Action redirects to '/articles/:id'
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:42 # Magazine App Read Action  index action responds with a 200 status code
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:47 # Magazine App Read Action  index action displays all the articles
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:55 # Magazine App Read Action  show action show page responds with a 200 status code
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:65 # Magazine App Read Action  show action show page displays the article's content
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:78 # Magazine App update action responds with a 200 status code
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:83 # Magazine App update action displays the existing object in the edit form
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:90 # Magazine App update action saves edits to an article
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:100 # Magazine App update action redirects to '/articles/:id'
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:109 # Magazine App update action submits the form via a patch request
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:118 # Magazine App delete action responds with a 200 status code
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:123 # Magazine App delete action deletes an article from the database
+rspec ./spec/sinatra_ar_crud_lab_spec.rb:130 # Magazine App delete action submits the form via a delete request
+
