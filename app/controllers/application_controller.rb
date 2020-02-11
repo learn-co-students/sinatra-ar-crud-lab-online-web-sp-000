@@ -1,5 +1,6 @@
-
 require_relative '../../config/environment'
+
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -21,17 +22,17 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles' do
-    @articles = Articles.all
+    @articles = Article.all
     erb :index
   end
 
-  post '/articles/:id' do
+  get '/articles/:id' do
     @article = Article.find(params[:id])
     erb :show
   end
 
-  get '/article/:id/edit' do
-    @article - Article.find(params[:id])
+  get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
     erb :edit
   end
 
