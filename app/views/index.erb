@@ -1,4 +1,11 @@
-<% @articles.each do |item| %>
-<p><%=item.title%></p>
-<p><%=content.title%></p>
-<% end %>  
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Titles</h1>
+    <% @articles.each do |articles| %>
+      <strong><%= articles.title %></strong><br />
+      <%= articles.content %>
+      <br /><br />
+    <% end %>
+  </body>
+</html>
