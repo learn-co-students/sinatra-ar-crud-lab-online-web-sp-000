@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1><%= @articles.title %></h1>
-    <p><%= @articles.content %></p>
-    <br />
-    <form method="POST" action="/articles/<%= @articles.id %>/delete">
-      <input id="hidden" type="hidden" name="_method" value="delete">
+    <h1><%= @article.title %></h1>
+    <p><%= @article.content %></p>
+
+    <form method="POST" action="/articles/<%= @article.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
       <input type="submit" value="delete">
     </form>
   </body>
