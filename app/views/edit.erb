@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        .item {
+            display: flex;
+            flex: 1 1 200px;
+            width: 320px;
+            justify-content: space-between;
+            margin-bottom: .5em;
+        }
+    </style>
+  </head>
+  <body>
+  <h1>Edit Article</h1>
+  <form method="post" action="/articles/<%=@article.id%>">
+      <input id="hidden" type="hidden" name="_method" value="patch"> 
+      <div class="item">
+          <label for="title">Article title:</label>
+          <input id="title" type="text" name="article[title]" value="<%=@article.title%>" />
+      </div>
+
+      <div class="item">
+          <label for="content">Article content:</label>
+          <input id="content" type="text" name="article[content]" value="<%=@article.content%>" />
+      </div>
+      
+      <input type="submit" id="Submit" value="submit">
+  </form>
+  </body>
+</html>
