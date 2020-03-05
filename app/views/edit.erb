@@ -1,0 +1,12 @@
+<h1>Existing Article</h1>
+<p><%=@article.title%></p>
+<p><%=@article.content%></p>
+
+<form method='POST' action=patch>
+  <label for='title'>Title: </label>
+  <input id='title' type='text' name = 'title'>
+  <label for='content'>Content: </label>
+  <input id='content' type='text' name='content'>
+  <input type='submit' id='submit' name='submit'>
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+</form>
