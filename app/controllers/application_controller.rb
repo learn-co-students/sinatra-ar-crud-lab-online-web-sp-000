@@ -12,15 +12,18 @@ class ApplicationController < Sinatra::Base
   get '/articles/new' do
 
     erb :'articles/new'
+    # redirect_to '/articles/#{Article.last.id}'
+
   end
 
   post '/articles' do
 
     @created_article = Article.create(title: params[:title], content: params[:content])
-    Article.all << @created_article
 
-    erb :'articles/show'
+    redirect to "/articles/#{@created_article.id}"
+
   end
+
 
   get '/articles' do
 
