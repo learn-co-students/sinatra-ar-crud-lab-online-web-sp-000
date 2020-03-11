@@ -1,7 +1,22 @@
-<form method="post" action="/articles/<%= @article.id %>">
-  <p>Article Title: <%= @created_article.title %></p>
-  <p>Article Content: <%= @created_article.content %></p>
+<form method="post" action="/articles">
+  <p>Article Title: <%= @article.title %></p>
+  <p>Article Content: <%= @article.content %></p>
+</form>
 
+<form method="post" action="/articles/<%= @article.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
 </form>
+
+
+
+
+<!-- <form method="post" action="/articles">
+  <p>Article Title: <%= @article.title %></p>
+  <p>Article Content: <%= @article.content %></p>
+</form>
+
+<form method="post" action="/articles/<%= @article_to_delete.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form> -->
