@@ -18,3 +18,6 @@ group :development do
   gem 'sqlite3', '~> 1.3.6'
   gem "shotgun"
 end
+
+gem 'standardrb'
+gem 'htmlbeautifier'
