@@ -1,0 +1,20 @@
+<h1>See our articles</h1>
+
+<ul>
+  <% @all_articles.each.with_index(1) do |article, index| %>
+  <li>
+    <a href="/articles/<%= article.id%>">
+      <span style="font-weight: bold;"><%= index %>:</span> <%= article.title %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+
+<h2>Add a new article</h2>
+<a href="/articles/new">
+  <button
+    style="color: green; border-radius: 5px; border: 2px solid green; padding: 8px 20px"
+  >
+    Add New
+  </button>
+</a>
