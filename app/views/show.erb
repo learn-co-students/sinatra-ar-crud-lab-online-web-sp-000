@@ -1,0 +1,12 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+
+<form action="/articles/<%= @article.id%>" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="DELETE" />
+  <button
+    type="submit" id="submit"
+    style="color: red; border: 2px solid red; border-radius: 5px; padding: 8px 20px; position: absolute; bottom: 20px; left: 20px;"
+  >
+    Delete
+  </button>
+</form>
