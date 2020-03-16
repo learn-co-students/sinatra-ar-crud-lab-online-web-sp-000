@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   get '/' do 
   end 
   # uses ar to grab all articles and stores them in @articles
+  # renders index.erb
   get '/articles' do
     
     @articles = Article.all
@@ -49,13 +50,19 @@ class ApplicationController < Sinatra::Base
   patch '/articles/:id' do 
     #binding.pry
     @article = Article.find(params[:id])
-    # @article.title = params[:title]
-    # @article.content = params[:content]
-    # @article.save
-    @article.update 
+    @article.title = params[:title]
+    @article.content = params[:content]
     @article.save 
 
     redirect "/articles/#{@article.id}"
+  end 
+
+  delete '/articles/:id' do 
+    #binding.pry 
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect "/articles"
   end 
 
 end
