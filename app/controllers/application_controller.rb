@@ -8,19 +8,19 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  # get '/' do
-  # end
+  get '/' do
+  end
 
-  get '/articles/new' do 
+  get '/new' do 
     #binding.pry 
    
     erb :new
   end 
 
   post '/articles' do 
-
+    binding.pry
     @article = Article.create(title: params[:title], content: params[:title])
-
-    erb :show 
+    
+    erb :show
   end 
 end
