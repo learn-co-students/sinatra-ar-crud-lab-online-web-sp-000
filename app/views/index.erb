@@ -1,0 +1,6 @@
+<% @articles.each_with_index do |article, i| %>
+  <div>
+    <p><%= i+1 %>: <%= article.title %></p>
+    <p><%= article.content %></p>
+  </div>
+<% end %>
