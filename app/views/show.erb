@@ -1,0 +1,8 @@
+<h1><p><%=@article.title%></p></h1>
+<br>
+<p><%=@article.content%></p>
+
+<form method ="post" action ="/articles/<%=@article.id%>">
+  <input type ="hidden" id ="hidden" name ="_method" value ="delete">
+  <input type ="submit" value ="delete">
+</form>
