@@ -1,0 +1,9 @@
+<h1> Your Article </h1>
+
+<h2>Article Title: <%= "#{@article.title}" %></h2>
+<p>Article Content: <%= "#{@article.content}" %></p>
+
+<form method="post" action="/articles/<%= @article.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+  </form>
