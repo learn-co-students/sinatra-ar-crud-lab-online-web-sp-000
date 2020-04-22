@@ -1,0 +1,24 @@
+<html>
+    <head><title>All Articles</title></head>
+    <style>
+        article {
+            border: 2px solid #555;
+            border-radius: 10px;
+            width: 40%;
+            text-align: center;
+            box-shadow: -1px 1px 1px #333, -2px 2px 2px #222, -3px 3px 3px #111, -4px 4px 4px #000;
+            margin-top: 20px;
+        }
+    </style>
+    <body>
+        <main class="container">
+            <h1>Articles</h1>
+            <%@articles.each do |article|%>
+                <article>
+                    <h3><%=article.title%></h3>
+                    <p><%=article.content%></p>
+                </article>
+            <%end%>
+        </main>
+    </body>
+</html>
