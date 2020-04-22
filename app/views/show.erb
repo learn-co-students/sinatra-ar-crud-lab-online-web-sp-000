@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Newest Created Article</title>
+    </head>
+    <body>
+        <h1>Title:</h1>
+        <h3><%=@article.title%></h3>
+        <h1>Content:</h1>
+        <h3><%=@article.content%></h3>
+        <form action="/articles/<%=@article.id%>" method="POST">
+            <input type="hidden" name="_method" id="hidden" value="DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </body>
+</html>
