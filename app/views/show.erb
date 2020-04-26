@@ -1,0 +1,11 @@
+<h1><%= @article.title%></h1>
+<p><%= @article.content%></p>
+<form class="" action="/articles/<%= @article.id %>" method="post">
+  <input type="hidden" name="id" value="<%= @article.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="" value="delete">
+</form>
+<!-- <form class="" action="/articles/<%= @article.id %>/edit" method="get">
+  <input type="hidden" name="id" value="<%= @article.id %>">
+  <input type="submit" name="" value="Eide">
+</form> -->
