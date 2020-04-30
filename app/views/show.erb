@@ -1,0 +1,12 @@
+<% binding.pry %>
+
+<% @articles.each do |article| %>
+
+<%= @title %>
+<%= @content &>
+<% end %>
+
+<form action="/articles/:id" method="post">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
