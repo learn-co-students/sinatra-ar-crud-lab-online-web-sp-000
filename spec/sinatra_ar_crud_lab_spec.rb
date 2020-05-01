@@ -9,6 +9,7 @@ describe "Magazine App" do
     @article2 = Article.create(:title => "second article", :content => "I'm a really good writer")
   end
 
+
   describe "Create Action" do
 
     it "creates a new article" do
