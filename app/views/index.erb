@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Articles</title>
+</head>
+<body>
+	<button type="button" name="button"><a href="/articles/new">Create new Article</a></button>
+
+	<% @articles.each do |article| %>
+
+		<h1><a href="/articles/<%= article.id %>"><%= article.title %></a></h1>
+		<p>Content: <%= article.content %></p>
+
+	<% end %>
+</body>
+</html>
