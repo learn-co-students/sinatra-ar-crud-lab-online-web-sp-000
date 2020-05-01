@@ -12,10 +12,10 @@
 		<input type="hidden" id="hidden" name="_method" value="PATCH">
 
 		<label for="title">Title:</label>
-		<input type="text" id="title" name="title" value="<%= @article.title %>"><br>
+		<input type="text" id="title" name="article[title]" value="<%= @article.title %>"><br>
 
 		<label for="content">Content:</label><br>
-		<textarea id="content" name="content" rows="8" cols="80"><%= @article.content %></textarea><br>
+		<textarea id="content" name="article[content]" rows="8" cols="80"><%= @article.content %></textarea><br>
 
 		<input type="submit" id="submit" value="Edit Article">
 	</form>
