@@ -15,8 +15,7 @@ class ApplicationController < Sinatra::Base
 
 
   get '/articles/new' do
-
-    @article = Article.create(title: params[:title], content: params[:content])
+    # @article = Article.create(title: params[:title], content: params[:content])
     # binding.pry
     # Article.create(title: params[:title])
     # @title = params[:title]
@@ -30,9 +29,11 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  get '/articles' do
-    # binding.pry
-    @article = Article.create(title: params[:title], content: params[:content])
+post '/articles' do
+
+    Article.create(title: params[:title], content: params[:content])
+    @title = params[:title]
+    @content = params[:content]
 
     erb :index
   end

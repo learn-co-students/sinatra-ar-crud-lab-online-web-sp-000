@@ -1,7 +1,8 @@
-<form action="/articles/<%= @article.id %>" method="post">
-  <!-- <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type="text" ...> -->
-
-      <input type="submit" value="submit" id="submit">
-
+<form action="/articles" method="post">
+    <input type="text" name="title"> <=% @title %> </input>
+    <input type="text" name="content">
+    <input type="submit" value="submit" id="submit">
 </form>
+
+<!-- <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" ...> -->
