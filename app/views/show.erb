@@ -1,11 +1,5 @@
 
-
-<% @articles.each do |article| %>
-<%= article.title %>
-<%= article.content %>
+<% @article.each do |a| %>
+<%= a.@title %>
+<%= a.@content %>
 <% end %>
-
-<!-- <form action="/articles/:id" method="post">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="submit" value="patch">
-</form> -->
