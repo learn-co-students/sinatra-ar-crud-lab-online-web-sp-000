@@ -42,12 +42,15 @@ post '/articles' do
   get '/articles/:id' do
   # binding.pry
     @article = Article.find(params[:id])
-    # @title = @article.title
-    # @content = @article.content
-    erb :"/articles/show"
+    erb :show
   end
 
-# get '/articles/:id/edit' do
+get '/articles/:id/edit' do
+  # binding.pry
+  erb :edit
+end
+
+# patch '/articles/:id'
 #   erb :edit
 # end
 
