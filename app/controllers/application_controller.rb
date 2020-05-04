@@ -44,7 +44,7 @@ post '/articles' do
     @article = Article.find(params[:id])
     # @title = @article.title
     # @content = @article.content
-    erb :"/views/show"
+    erb :"/articles/show"
   end
 
 # get '/articles/:id/edit' do
