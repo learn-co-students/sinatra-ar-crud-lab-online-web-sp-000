@@ -1,0 +1,8 @@
+
+<% @articles.each.with_index(1) do |article, i| %>
+    <ol>
+        <p><strong><%=i%>. </strong>Ref: <%= article.id %><br>
+        Title: <%= article.title %><br>
+        Content: <%= article.content %></p>
+    </ol>
+<%end%>
