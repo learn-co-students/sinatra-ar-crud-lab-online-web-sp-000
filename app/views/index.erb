@@ -1,0 +1,11 @@
+  <body>
+    <% if @articles.empty? %>
+      <h1>no articles</h1>
+    <% else %>
+    <h1>Articles</h1>
+      <% @articles.each do |article| %>
+        <h2><%= article.title %> | <a href="/articles/<%= article.id %>/edit">edit</a></h2>
+      <% end %>
+    <% end %> <br>
+    <p><a href="/articles/new">Create an article</a></p>
+  </body>
