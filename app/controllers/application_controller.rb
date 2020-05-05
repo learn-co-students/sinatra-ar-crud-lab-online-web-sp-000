@@ -46,13 +46,27 @@ post '/articles' do
   end
 
 get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
   # binding.pry
   erb :edit
 end
 
-# patch '/articles/:id'
-#   erb :edit
-# end
+patch '/articles/:id' do
+    # binding.pry
+  @article = Article.find(params[:id])
+  @article.title = params[:title]
+  @article.content = params[:content]
+  # Article.save
+   @article.save
+  redirect to "/articles/:id"
+
+  erb :show
+end
+
+  delete '/articles/:id' do
+    Article.clear
+    erb :show
+  end
 
 
 
