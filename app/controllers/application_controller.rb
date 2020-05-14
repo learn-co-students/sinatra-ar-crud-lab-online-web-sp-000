@@ -9,10 +9,12 @@ class ApplicationController < Sinatra::Base
   end
 
   # create routes ###############################
+  # new
   get '/articles/new' do
     erb :new
   end
   
+  # create
   post '/articles' do
     article = Article.new(params)
     article.save  
@@ -21,22 +23,26 @@ class ApplicationController < Sinatra::Base
 
 
   # read routes ###############################
+  # index
   get '/articles' do
     @articles = Article.all
     erb :index
   end
   
+  # show
   get '/articles/:id' do    
     @article = Article.find(params[:id])
     erb :show
   end
 
   # update routes ###############################
+  # edit
   get '/articles/:id/edit' do
     @article = Article.find(params[:id])    
     erb :edit
   end
   
+  # update
   patch '/articles/:id' do
     article = Article.find(params[:id])
     # article.update(params[:article])
@@ -52,9 +58,12 @@ class ApplicationController < Sinatra::Base
   end
   
   # delete routes ###############################
+  # destroy
   delete '/articles/:id' do  
-    article = Article.find(params[:id])
-    article.destroy
+    # article = Article.find(params[:id])
+    # article.destroy
+    
+    Article.destroy(params[:id])
     redirect "/articles"
   end
  
