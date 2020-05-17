@@ -9,5 +9,24 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    "hello"
+  end
+
+  get '/articles' do
+    @articles = Article.all
+    erb :index
+  end
+
+  get '/articles/new' do
+    erb :new
+  end
+
+  get '/articles/:id' do
+    erb :show
+  end
+
+  post '/articles' do
+
+    erb :index
   end
 end
