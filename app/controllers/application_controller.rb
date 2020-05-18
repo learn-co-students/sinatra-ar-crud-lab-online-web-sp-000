@@ -22,11 +22,26 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles/:id' do
+    @article = Article.find {|a| a.id == params[:id].to_i}
     erb :show
   end
 
   post '/articles' do
+    @article = Article.create(params[:article])
+    redirect "/articles/#{@article.id}"
+  end
 
-    erb :index
+  get '/articles/:id/edit' do
+    @article = Article.find {|a| a.id==params[:id].to_i}
+    erb :edit
+  end
+
+  patch '/articles/:id' do
+    @old_a = Article.find {|a| a.id==params[:id].to_i}
+    @old_a.name = params[:name]
+    @old_a.content= params[:content]
+    @old_a.save
+
+    redirect "/articles/#{@article.id}"
   end
 end

@@ -1,4 +1,6 @@
-<form action='/articles/:id' method="post">
-Title: <input type="text" name="title" id="title">
+<h1> New Articles</h1>
+<form action='/articles' method="post">
+Title: <input type="text" name="article[title]" id="title">
+Content: <input type="content" name="article[content]" id="content">
 <input type="submit" id="submit">
 </form>
