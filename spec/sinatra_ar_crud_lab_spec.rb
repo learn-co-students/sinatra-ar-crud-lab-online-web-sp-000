@@ -112,7 +112,7 @@ describe "Magazine App" do
     end
 
   end
-
+=begin
   describe "delete action" do
 
     it 'responds with a 200 status code' do
@@ -133,7 +133,7 @@ describe "Magazine App" do
     end
 
   end
-
+=end
 
 
 
