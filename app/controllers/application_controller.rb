@@ -1,5 +1,6 @@
 
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -10,4 +11,14 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
   end
+
+  get '/models/new' do
+    erb :new
+  end 
+
+  post '/models' do 
+    binding.pry
+    variable = params[:some_attribute]
+    Article.create(title:, content:)
+
 end
