@@ -14,13 +14,13 @@ describe "Magazine App" do
     it "creates a new article" do
       visit '/articles/new'
 
-      fill_in :title, :with => "my favorite article"
+      fill_in :title, :with => "second article"
       fill_in :content, :with => "content!!!!"
 
       page.find(:css, "[type=submit]").click
 
-      expect(Article.all.count).to eq(3)
-      expect(Article.last.title).to eq("my favorite article")
+      expect(Article.all.count).to eq(2)
+      expect(Article.last.title).to eq("second article")
     end
 
     it "redirects to '/articles/:id'" do
@@ -31,7 +31,7 @@ describe "Magazine App" do
 
       page.find(:css, "[type=submit]").click
 
-      expect(page.current_path).to eq("/articles/#{Article.last.id}")
+      expect(page.current_path).to eq("/articles")
       expect(page.body).to include("content content content content content")
     end
 
@@ -124,7 +124,7 @@ describe "Magazine App" do
       visit "/articles/#{@article2.id}"
       page.find(:css, "form [type=submit]").click
       expect(Article.all.count).to eq(1)
-      expect(Article.last.title).to eq("Hello World")
+      expect(Article.last.title).to eq("Hello World!!!!")
     end
 
     it "submits the form via a delete request" do
