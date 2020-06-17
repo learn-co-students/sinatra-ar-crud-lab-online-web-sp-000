@@ -17,18 +17,14 @@ get "/articles/new" do
   @article= Article.new
   erb :new
 end
-
+ 
 post "/articles" do 
-  binding.pry
- @article= Article.new(params)
-redirect "/articles/#{@article.id}"
+ @article= Article.create(params)
+ redirect to "/articles/#{@article.id}"
 end
 
   get '/articles/:id' do 
    @article = Article.find(params["id"])
-   
+   erb :show
   end 
-
- 
-
 end
