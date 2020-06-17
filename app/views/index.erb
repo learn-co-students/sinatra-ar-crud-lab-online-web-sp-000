@@ -1,0 +1,7 @@
+<ul>
+<%@articles.each do |info|%>
+<li><strong><%= info.id %>. <span style="text-decoration: underline;">
+<%=info.title%></span></strong><br>
+<em><%= info.content %></em></li><br>
+</ul>
+<% end %>
