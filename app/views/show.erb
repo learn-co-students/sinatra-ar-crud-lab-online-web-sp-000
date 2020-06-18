@@ -7,11 +7,7 @@
 
  
 
-<%# <form method="get" action="/articles">
-  <button type="submit" value="Submit">Confirm</button>
-</form> %>
-<%# 
-<form method="POST" action="/articles/<%= @article.id %>
-<%# <input type="hidden" value="delete" name="_method"> %>
-<%# <button type="submit" value="Submit">Delete</button> %>
-<%# </form> %>
+<form method="POST" action="/articles/<%= @article.id %>">
+<input type="hidden" value="delete" name="_method">
+<button type="submit" value="Submit">Delete</button>
+</form>
