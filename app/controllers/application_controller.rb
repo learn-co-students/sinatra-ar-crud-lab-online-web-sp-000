@@ -27,4 +27,10 @@ end
    @article = Article.find(params["id"])
    erb :show
   end 
+
+  get '/articles/:id/edit' do
+    
+  end 
+  
+
 end
