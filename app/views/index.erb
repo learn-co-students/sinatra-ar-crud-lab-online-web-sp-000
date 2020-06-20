@@ -1,0 +1,7 @@
+<ul>
+<% @articles.each do |info| %>
+<li><%= info.id %>
+<%= info.title %>
+<em><%= info.content %></em>
+</ul>
+<% end %>

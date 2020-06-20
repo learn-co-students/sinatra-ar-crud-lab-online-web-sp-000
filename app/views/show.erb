@@ -1,0 +1,8 @@
+<h1>Please confirm the info</h1>
+<h2>Article Title: <%= @article.title %></h2>
+<h2>Article Content: <%= @article.content%>
+
+<form method="POST" action="/articles/<%= @article.id %>">
+<input type="hidden" value="delete" name="_method">
+<button type="submit" value="Submit">Delete</button>
+</form>
