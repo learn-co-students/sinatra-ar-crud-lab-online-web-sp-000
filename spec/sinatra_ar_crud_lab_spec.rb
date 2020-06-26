@@ -23,7 +23,7 @@ describe "Magazine App" do
       expect(Article.last.title).to eq("my favorite article")
     end
 
-    it "redirects to '/articles/:id'" do
+    it "redirects to '/articles'" do
       visit '/articles/new'
 
       fill_in :title, :with => "an article"
@@ -31,7 +31,7 @@ describe "Magazine App" do
 
       page.find(:css, "[type=submit]").click
 
-      expect(page.current_path).to eq("/articles/#{Article.last.id}")
+      expect(page.current_path).to eq("/articles")
       expect(page.body).to include("content content content content content")
     end
 
