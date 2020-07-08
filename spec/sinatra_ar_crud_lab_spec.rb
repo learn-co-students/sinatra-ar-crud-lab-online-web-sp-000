@@ -13,7 +13,7 @@ describe "Magazine App" do
 
     it "creates a new article" do
       visit '/articles/new'
-
+      
       fill_in :title, :with => "my favorite article"
       fill_in :content, :with => "content!!!!"
 
