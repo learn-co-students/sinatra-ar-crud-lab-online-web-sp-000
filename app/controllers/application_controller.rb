@@ -25,15 +25,24 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  post '/articles' do
-    a = Article.new
-    a.title = params[:title]
-    a.content = params[:content]
-    a.save
-    @article = a
-    redirect /articles
-  end
+  # post '/articles' do
+  #   a = Article.new
+  #   a.title = params[:title]
+  #   a.content = params[:content]
+  #   a.save
+  #   @article = a
+  #   id = a.id
+  #   id = id.to_sym
+  #   redirect "/articles/#{id}"
+  # end
 
+  post "/articles" do
+   
+    @article = Article.create(params)
+
+    binding.pry
+    redirect to "/articles/#{ @article.id }"
+  end
 
   get '/articles/:id' do
     @article = Article.find(params["id"])
