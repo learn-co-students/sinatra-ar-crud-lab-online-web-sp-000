@@ -13,11 +13,13 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/index' do
+    
+    erb :index
+  end
+
   get '/articles' do
-    @articles = Articles.all
-    @articles.each do |article|
-      article
-    end
+    @articles = Article.all
   erb :index
   end
 
@@ -25,22 +27,10 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  # post '/articles' do
-  #   a = Article.new
-  #   a.title = params[:title]
-  #   a.content = params[:content]
-  #   a.save
-  #   @article = a
-  #   id = a.id
-  #   id = id.to_sym
-  #   redirect "/articles/#{id}"
-  # end
-
   post "/articles" do
-   
-    @article = Article.create(params)
+    @article = Article.create(params[:article])
 
-    binding.pry
+
     redirect "/articles/#{ @article.id }"
   end
 
@@ -49,21 +39,34 @@ class ApplicationController < Sinatra::Base
   erb :show
   end
 
-  # get '/articles/show' do
-  #   @articles
-  
-  # end
-
-  
-
-  
-
- 
-
   get '/articles/:id/edit' do
-    @title = params[:id]
- 
-    edit.erb
+  #   a = Article.find(params[:id])
+  #  @title = a["title"]
+  #  @content = a["content"]
+  # a.save
+  #  erb :edit
+  @article = Article.find_by_id(params[:id])
+  # @article.title = params[:title]
+  # @article.content = params[:content]
+  @article.save
+  erb :edit
+  # redirect to "/articles/#{@article.id}"
   end
 
+  patch '/articles/:id' do
+    # binding.pry
+    @article = Article.find_by_id(params[:id])
+    @article.title = params[:article][:title]
+    @article.content = params[:article][:content]
+    @article.save
+    # binding.pry
+    redirect to "/articles/#{@article.id}"
+  end
+
+  delete '/articles/:id' do
+    @article = Article.find_by_id(params[:id])
+    @article.delete
+    binding.pry
+  redirect to '/articles'
+  end
 end
