@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
     @article.title = params[:article][:title]
     @article.content = params[:article][:content]
     @article.save
-    # binding.pry
+    binding.pry
     redirect to "/articles/#{@article.id}"
   end
 
