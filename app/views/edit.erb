@@ -1,0 +1,11 @@
+<DOCTYPE html>
+  <html>
+  <body>
+    <h1>Edit a new article</h1>
+    <form method="POST" action="/articles<%=@article.id %>">
+    <p>Edit Article Title: <input type="text" name="article[title]" value="<%= @article.title %>"></p>
+    <p>Edit Article Content: <input type="text" name="article[content]" id="<%= @article.content %>"></p>
+    <input type="submit" id="submit">
+  </form>
+  </body>
+  </html>
