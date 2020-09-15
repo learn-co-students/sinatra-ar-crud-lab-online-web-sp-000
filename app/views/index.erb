@@ -1,0 +1,5 @@
+<h1>Articles!</h1>
+<% @articles.each do |hash| %>
+    <h2><%= hash.title %></h2>
+    <p><%= hash.content %></p>
+<% end %>
