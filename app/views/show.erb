@@ -3,7 +3,7 @@
 <h4> <%= @article.title %> </h4>
 <p> <%= @article.content %> </p>
 
-<form method='POST' action="/articles/<%= @article.id %>">
-<input id="hidden" type="hidden" name="_method" value="DELETE">
+<form action="/articles/<%= @article.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
 <input type="submit" value="delete">
 </form> 
