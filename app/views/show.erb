@@ -1,0 +1,7 @@
+<h1><%= @article.title %></h1>
+<%= @article.content %>
+
+<form method="post" action="/articles/<%= @article.id %>">
+  <input type="hidden" name="_method" value="delete" />   <%#value="delete" is ressposible for the form being redirected to a delete method%>
+  <input type="submit" /> <%#THIS IS DELETE NOT SUBMIT%>
+</form>
