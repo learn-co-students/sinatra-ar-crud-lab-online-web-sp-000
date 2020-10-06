@@ -1,5 +1,4 @@
-
-require './config/environment'
+require "./config/environment"
 
 begin
   fi_check_migration
