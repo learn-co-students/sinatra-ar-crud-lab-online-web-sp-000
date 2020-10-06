@@ -9,11 +9,16 @@ class ApplicationController < Sinatra::Base
 
   get "/articles" do
     @articles = Article.all
-    erb :articles
+    erb :index
   end
 
   get "/articles/new" do
-    render :new
+    erb :new
+  end
+
+  post "/articles" do
+    @article = Article.create(params)
+    redirect to "/articles/#{@article.id}"
   end
 
   get "/articles/:id" do
@@ -21,8 +26,25 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  post "/articles" do
-    @article = Article.create(params)
+  get "/articles/:id/edit" do
+    @article = Article.find(params[:id])
+
+    erb :edit
+  end
+
+  patch "/articles/:id/edit" do #ask: why did I have to add the /edit onto the end of this route since sinatra told me to do so in the browser?
+    @article = Article.find(params[:id])
+    @article.title = params[:title] #does this take the title they pass in in current time from params?
+    @article.content = params[:content] #does this take the content they pass in in current time from params?
+    @article.save
+
     redirect to "/articles/#{@article.id}"
+  end
+
+  delete "/articles/:id" do
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect to "/articles"
   end
 end
