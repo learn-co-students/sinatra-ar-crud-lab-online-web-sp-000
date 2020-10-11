@@ -8,19 +8,12 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do # root directory 
-  end
-
-  get '/articles' do
-    # This action should use active record to grab all of the articles and store them in an instance var @articles.
-    # Then, it should render to the index.erb view. That view should use ERB to iterate over @articles.
-
-    erb :index
+  get '/' do # root directory
   end
 
   get '/articles/new' do
-    # This view will be a blank form that should submit a POST request to /articles 
-    
+    # This view will be a blank form that should submit a POST request to /articles
+
     erb :new
   end
 
@@ -31,14 +24,23 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  post '/articles' do 
+  post '/articles' do
     # create a new article from the pramas from the form, then redirects that to new articles show page
 
     erb :show
-  end 
+  end
 
+  get '/articles/:id/edit' do
+    # his view should contain a form to update a specific article--similar to the form you made for a new article,
+    # but the fields should be pre-populated with the existing title and content of the article.
 
+    erb :edit
+  end
 
-  
-  
+  patch '/articles/:id' do
+  end
+
+  delete 'articles/:id' do
+  end
+
 end
