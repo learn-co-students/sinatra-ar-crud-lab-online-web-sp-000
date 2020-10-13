@@ -1,0 +1,4 @@
+<h1>List of Articles</h1>
+   <% @articles.each_with_index do |article, index| %>
+     <h3><%=index + 1 %>.<%= article.title %></h3><br>
+   <% end %>
