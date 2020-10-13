@@ -1,7 +1,7 @@
-<h1><%= article.title %></h1>
-<h1><%= article.content %></h1>
+<h1><%= @article.title %></h1>
+<h1><%= @article.content %></h1>
 
-<p><a href="/articles/<%= @articles.id %>/edit">Edit</a></p>
+<p><a href="/articles/<%= @article.id %>/edit">Edit</a></p>
 
 <p>
 <form action="/articles/<%= @article.id %>" method="POST">
