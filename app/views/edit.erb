@@ -1,0 +1,8 @@
+# This view should contain a form to update a specific article--similar to the form you made for a new article, but the fields should be pre-populated with the existing title and content of the article.
+
+<form method="POST" action="/articles">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p><input type="text" name="title"></p>
+  <p><input type="text" name="content"></p>
+  <input type="submit" name="submit" value="submit">
+</form>
