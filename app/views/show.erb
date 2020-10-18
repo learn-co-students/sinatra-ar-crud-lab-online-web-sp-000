@@ -1,10 +1,9 @@
-# should use ERB to render the @article's title and content
-
 <h1>Selected Article</h1>
 
-  <p><%= @article.title %></p>
+  <p>Title: <%= @article.title %></p>
   <p><%= @article.content %></p>
 
-<form method="POST" action="/articles/[:id]"
+<form method="POST" action="/articles/<%= @article.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
 </form>
