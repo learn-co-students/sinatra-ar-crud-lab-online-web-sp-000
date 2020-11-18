@@ -1,0 +1,10 @@
+<!-- shows a list of ALL the articles -->
+<!-- should iterate over @articles and render them -->
+<body>
+<ul>
+<% @articles.each do |article| %>
+<li><%= article.title %></li>
+<!-- <%= article.content %> -->
+<% end %>
+</ul>
+</body>
