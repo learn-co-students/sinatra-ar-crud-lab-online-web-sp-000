@@ -1,0 +1,20 @@
+    attr_accessor :title, :content 
+
+    @@all = []
+
+
+    def self.all
+        @@all
+    end 
+
+    def self.create(title:, content:)
+      @title = title
+      @content = content
+      @@all << self
+    end 
+
+    def self.find(id)
+        sql = "SELECT * FROM articles WHERE id = ?"
+        result = DB[:conn].execute(sql, id)[0]
+        Article.create(result[0])
+    end 
