@@ -1,0 +1,7 @@
+<h2> List of All Articles: </h2>
+
+<% @articles.each do |a| %>
+  <p><u> Article <%= a.id %>:</u></p>
+  <p>Title: <%= a.title %></p>
+  <p>Content: <%= a.content %></p>
+<% end %>
