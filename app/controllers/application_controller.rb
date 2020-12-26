@@ -18,13 +18,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles/new' do
-    #@article = Article.new
     erb :new
   end
 
   post '/articles' do
-    #rendering an error with params; unable to create title and content
-    @article = Article.create(:title => params[:title], :content => params[:content])
+    #binding.pry
+    @article = Article.create(params[:article])
     redirect to "/articles/#{@article.id}"
   end
 

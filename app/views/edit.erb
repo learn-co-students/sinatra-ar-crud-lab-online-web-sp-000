@@ -7,8 +7,7 @@
   </p>
   <p>
   <label for="content">Content:</label><br>
-  <!-- Content not appearing -->
-  <textarea id="content" type="text" name="article[content]" value="<%= @article.content %>"></textarea>
+  <textarea id="content" type="text" name="article[content]"><%= @article.content %></textarea>
   </p>
-  <input type="submit" name="submit" value="submit">
+  <input type="submit" value="submit">
 </form>
