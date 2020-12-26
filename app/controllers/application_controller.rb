@@ -23,8 +23,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/articles' do
-    #rendering an error
-    @article = Article.create(params)
+    #rendering an error with params; unable to create title and content
+    @article = Article.create(:title => params[:title], :content => params[:content])
     redirect to "/articles/#{@article.id}"
   end
 
