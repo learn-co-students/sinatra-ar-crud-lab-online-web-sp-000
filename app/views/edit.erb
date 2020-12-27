@@ -1,0 +1,9 @@
+
+<form action="/articles/<%= @article.id %>" method="POST" autocomplete="on">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p><%= @article.title %></p>
+  <p><%= @article.content %></p>
+  <p>Article's Title: <input type="text" name="title"></p>
+  <p>Article's Content: <input type="text" name="content"></p>
+  <input type="submit" value="submit">
+</form>
