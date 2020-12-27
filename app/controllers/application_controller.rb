@@ -40,10 +40,10 @@ class ApplicationController < Sinatra::Base
     @article = Article.find_by(:id => params[:id])
     # @article[:title] = params[:title]
     # @article[:content] = params[:content]
-    @article.update(params)
+    @article.update(params[:article])
     @article.save
-    redirect "/articles/"#{@article[:id]}""
-  end
+redirect to "/articles/#{ @article.id }"
+end
 
     delete '/articles/:id' do
     @article = Article.find_by(:id => params[:id])
