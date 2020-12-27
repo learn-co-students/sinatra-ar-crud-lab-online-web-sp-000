@@ -3,7 +3,7 @@
   </head>
   <body>
 
-    <form action="/articles/:id" method= "post">
+    <form action="/articles/<%=@article.id%>" method= "post">
       <lable> Title: <input type= "text" name="article[:title]" value= <%=@article.title%>></lable>
       <lable> Content: </lable><input type= "text" name="article[:content]" value = <%=@article.content%>></lable>
   <input type="hidden" name="_method" value="delete">
