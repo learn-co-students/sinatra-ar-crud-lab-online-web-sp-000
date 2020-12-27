@@ -40,5 +40,20 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  redirect '/articles/#{Articles.last.id}' do
+    found = false
+    @articles = Article.all
+    @articles.each do | selected |
+      if (selected.id == params[:id])
+        found = true
+        @chosen = selected
+        erb :show
+      end
+    end
+    if (found == false)
+      "Error, no matching ID found"
+    end
+  end
+
 
 end
