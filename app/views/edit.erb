@@ -1,8 +1,8 @@
 <html>
   <head>
     <body>
-      <form action="/articles/<%=@article.id%>" method="post">
-    <input id="hidden" type="hidden" name="_method" value = "patch">
+      <form action="/articles/:id" method="post">
+    <input  type="hidden" name="_method" value="patch">
     <label for="articles">
      <input id="title" type="text" name="title" value=<%=@article.title%>>
      <input id="content" type="text" name="content"value=<%=@article.content%>>
