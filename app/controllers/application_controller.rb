@@ -37,4 +37,20 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{Article.last.id}"
   end
 
+  patch '/articles/:id' do
+    article = Article.find(id = "#{params[:id]}")
+    article.title = params[:title]
+    article.content = params[:content]
+    article.save
+    redirect to "/articles/#{params[:id]}"
+  end
+
+  delete '/articles/:id' do
+    article = Article.find(id = "#{params[:id]}")
+    binding.pry
+    article.destroy
+    redirect to "/articles"
+  end
+  
+
 end
