@@ -1,2 +1,6 @@
-<h2><%= chosen.title %></h2>
-<p><%= chosen.content %><p>
+<h2><%= @chosen.title %></h2>
+<p><%= @chosen.content %><p>
+<form method = "post" action = "/articles/<%= @chosen.id %>">
+    <input id="hidden" type="hidden" name= "_method" value="DELETE">
+    <input type ="submit" value = "delete">
+</form>

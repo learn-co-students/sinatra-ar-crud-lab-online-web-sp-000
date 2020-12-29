@@ -1,5 +1,6 @@
 
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -11,49 +12,41 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
 
-  get '/articles/new' do
-    erb :makeArticle
-  end
-
-  post '/created' do
-    newArticle = Article.new(title: params[:title], content: params[:content])
-    get '/articles/#{newArticle.id}'
-  end
-
   get '/articles' do
     @articles = Article.all
     erb :index
   end
 
+  get '/articles/new' do
+    erb :makeArticle
+  end
+
+  post '/articles' do
+    newArticle = Article.create(title: params[:title], content: params[:content])
+    redirect to "/articles/#{newArticle.id}"
+  end
+
   get '/articles/:id' do
-    found = false
-    @articles = Article.all
-    @articles.each do | selected |
-      if (selected.id == params[:id])
-        found = true
-        @chosen = selected
-        erb :show
-      end
-    end
-    if (found == false)
-      "Error, no matching ID found"
-    end
+    @chosen = Article.find(params[:id])
+    erb :show
   end
 
-  redirect '/articles/#{Articles.last.id}' do
-    found = false
-    @articles = Article.all
-    @articles.each do | selected |
-      if (selected.id == params[:id])
-        found = true
-        @chosen = selected
-        erb :show
-      end
-    end
-    if (found == false)
-      "Error, no matching ID found"
-    end
+  get '/articles/:id/edit' do
+    @chosen = Article.find(params[:id])
+    erb :edit
   end
 
+  patch '/articles/:id' do
+      @chosen = Article.find(params[:id])
+      @chosen.title = params[:title]
+      @chosen.content = params[:content]
+      @chosen.save
+      redirect to "articles/#{@chosen.id}"
+  end
+
+  delete '/articles/:id' do
+    @chosen = Article.find(params[:id])
+    @chosen.delete
+  end
 
 end

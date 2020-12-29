@@ -1,0 +1,11 @@
+<h3>What the article current is...</h3>
+
+<h3><%= @chosen.title %></h3>
+<p><%= @chosen.content %></p>
+
+<form action = "/articles/<%= @chosen.id %>" method = "post">
+    <input id="hidden" type="hidden" name="_method" value = "patch">
+    <p>Title: <input type = "text" name = "title" id = "title"></p>
+    <p>Content: <input type = "text" name = "content" id = "content"></p>
+    <input type = "submit" name = "submit">
+</form>
