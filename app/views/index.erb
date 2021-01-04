@@ -1,0 +1,9 @@
+This is the index.erb file. This should show all articles.
+
+
+<% @articles.each do |article| %>
+<h1><%= article.title %></h1>
+<p>
+  <%= article.content %>
+</p>
+<% end %>

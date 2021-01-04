@@ -1,0 +1,13 @@
+This is the show.erb file. It should show an individual instance of article. 
+The delete button is at the bottom of the article getting displayed.
+
+<h1><%= @article.title %></h1>
+<p>
+  <%= @article.content %>
+</p>
+
+<!-- This code goes at the end of the page -->
+<form method="post" action="/articles/<%= @article.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
