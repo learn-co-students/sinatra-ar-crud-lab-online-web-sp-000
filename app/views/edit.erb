@@ -1,0 +1,16 @@
+This is the edit.erb file. It contains a form to edit a given instance of a model. 
+This form sends a PATCH request to patch '/articles/:id'. The patch route will 
+find the instance of the model to update, using id from params, update and save 
+that instance.
+
+The form should be similar to new.erb, but the fields should be pre-populated 
+with the existing title and content of the article.
+
+<form action="/articles/<%= @article.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    <input type="text" name="title" value="<%= @article.title %>">
+    <input type="text" name="content" value="<%= @article.content %>">
+    <input type="submit" value="submit" id="submit">
+</form>
+
