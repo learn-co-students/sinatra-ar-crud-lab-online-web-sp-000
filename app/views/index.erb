@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Articles</title>
+</head>
+<body>
+  <% @articles.each do |article| %>
+    <p>Article Number: <%= article.id %></p>
+    <p>Article Title: <%= article.title %></p>
+    <p>Article Content: <%= article.content %></p>
+  <% end %>
+</body>
+</html>
