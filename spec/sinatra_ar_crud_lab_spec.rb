@@ -10,7 +10,7 @@ describe "Magazine App" do
   end
 
   describe "Create Action" do
-
+    
     it "creates a new article" do
       visit '/articles/new'
 
