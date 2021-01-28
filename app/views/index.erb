@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Article List</title>
+    </head>
+
+    <body>
+    <h2>Article Titles: </h2>
+        <% @articles.each do |article| %>
+        <ul>
+            <li><%= article.title %></li>
+            <% end %> 
+        </ul>
+    </body>
+
+</html>
