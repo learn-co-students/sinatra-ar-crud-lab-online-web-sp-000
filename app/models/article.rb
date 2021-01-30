@@ -1,4 +1,9 @@
 #Placeholder for a model
 
 class Article < ActiveRecord::Base
-end
+  #attr_accessor :title, :content 
+  #def initialize(params)
+    #@title = params[:title]
+    #@content = params[:content]
+  end
+  
