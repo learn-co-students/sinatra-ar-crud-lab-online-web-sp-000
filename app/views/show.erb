@@ -1,3 +1,5 @@
+<!-- shows an individual article -->
+<!-- uses ERB to render the @article's title and content -->
 <h1><%= @article.title %></h1>
 
 <h4><%= @article.content %></h4>
@@ -5,8 +7,3 @@
 <input type="hidden" value="delete" name="_method" />
 <input type="submit"/>
 </form>
-
-<!-- <div class="article">
-<h2>Title: <%= @article.title %></h2></br></br>
-<h3>Content: </h3><p><%= @article.content %></p>
-</div> -->
