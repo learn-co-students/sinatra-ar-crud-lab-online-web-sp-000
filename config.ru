@@ -11,6 +11,7 @@ rescue ActiveRecord::PendingMigrationError => err
   STDERR.puts err
   exit 1
 end
+use Rack::MethodOverride
 # The purpose of this file is to detail to Rack the environment requirements of the application and start the application. 
 # generally we load the Sinatra library on the first line
 # The second line requires our application file
