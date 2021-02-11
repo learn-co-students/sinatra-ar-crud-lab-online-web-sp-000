@@ -1,8 +1,10 @@
-<h1><%=@article.title%></h1>
-<%=@article.content%>
+<h1><%=@board.name%></h1>
 
-<form method="POST" action="/articles/<%=@article.id%>">
+<form method="POST" action="/boards/<%=@board.id%>">
     <input id="hidden" type="hidden" name="_method" value="DELETE"/>
     <input type="submit" value="delete"/>
 </form>
+
+<button onclick="document.location='/boards'">Back To All Boards</button>
+
 

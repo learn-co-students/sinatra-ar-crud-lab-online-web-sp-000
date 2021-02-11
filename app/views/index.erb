@@ -1,9 +1,8 @@
 <ul>
-
-<%@articles.each do |article|%>
+<%@boards.each do |board|%>
 
     <li>
-    <a href="/articles/<%=article.id %>"><%= article.title%></a>
+    <a href="/boards/<%=board.id %>"><%= board.name%></a>
     </li>
 <%end%>
 </ul>

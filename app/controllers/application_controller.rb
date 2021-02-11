@@ -8,28 +8,25 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    redirect to "/articles"
-  end 
 
-
-  get "/articles" do 
-    @articles = Article.all
+  get "/boards" do 
+    @boards = Board.all
     erb :index
   end 
 
-  get '/articles/new' do 
-    @article = Article.new
+  get '/boards/new' do 
+    @boards = Board.new
     erb :new 
   end 
 
-  post '/articles' do 
-    @article = Article.create(params)
-    redirect to "/articles/#{ @article.id }"
+  post '/boards' do 
+    # raise params.inspect
+    @board = Board.create(params)
+    redirect to "/boards/#{ @board.id }"
   end 
 
-  get '/articles/:id' do
-    @article = Article.find(params[:id])
+  get '/boards/:id' do
+    @board = Board.find(params[:id])
     erb :show
   end 
 
