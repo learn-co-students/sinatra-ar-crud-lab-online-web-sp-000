@@ -20,10 +20,11 @@ class ApplicationController < Sinatra::Base
   post '/articles' do 
     attrs = params
     @article = Article.create(attrs) 
+    erb :new
   end
 
   get '/articles' do 
-    @articles = Article.article_title
+    @articles = Article.all
     erb :index 
   end
 
