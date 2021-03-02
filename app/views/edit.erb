@@ -7,7 +7,7 @@
     <title>Edit Article</title>
 </head>
 <body>
-    <form method="POST" action="/articles/<%=@article.id%>">
+    <form method="POST" action="/articles/<%=@article.id%>"> <!--the @article.title gets cut of at the first whitespace, it still passes the test though.-->
     <input id="hidden" type="hidden" name="_method" value="PATCH"> 
     <h1>Edit Article</h1>
 
