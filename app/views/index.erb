@@ -1,11 +1,5 @@
-  <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Posts</h1>
-    <% @posts.each do |post| %>
-      <strong><%= post.name %></strong><br />
-      <%= post.content %>
-      <br /><br />
-    <% end %>
-  </body>
-</html>
+<%@articles.each do |article|%>
+    <h1>ID: <%=article.id%></h1>
+    <h1>Title: <%=article.title%></h1>
+    <p>Content:<br><%=article.content%></p>
+<%end%>
