@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   post '/articles' do
    # binding.pry
     @article = Article.create(title: params[:title],content: params[:content])
-  redirect_to action: "articles", id: 3
+  redirect_to '/articles/:id.last'
   end
   
   
