@@ -1,0 +1,4 @@
+<form action="/checkout" method="post">
+  item: <input type="text" name="item">
+  <input type="submit" value="submit">
+</form>
