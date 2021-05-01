@@ -1,0 +1,8 @@
+<h1>Your articles:</h1>
+
+<% @articles.each.with_index(1) do |a, index| %>
+    <h2><%= "#{index}. #{a.title}" %></h2>
+    <p><%= a.content %>
+<% end %>
+
+
