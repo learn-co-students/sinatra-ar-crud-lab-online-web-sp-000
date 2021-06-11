@@ -1,0 +1,11 @@
+ 
+    <h1>Edit Article Entry</h1>
+
+<form action="/articles/<%= @article[:id]%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    
+    <h2><label for="article_title">Article Title:</label></h2>
+    <p><input type="text" name="title" id="article_title" value="<%= @article[:title] %>"> </p>
+    <h2><label for="article_content">Article Content:</label></h2>
+    <p><textarea name="content" id="article_content" rows="10" cols="50"><%= @article[:content]%></textarea></p>
+    <input type="submit">
